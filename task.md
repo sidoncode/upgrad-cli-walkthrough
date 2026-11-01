@@ -105,22 +105,50 @@ bash student_info.sh
 -   [ ] Tested both PASS and FAIL scenarios.
 -   [ ] Tested with and without `student.txt`.
 
-## Suggested Time Allocation
+## refernce solution
 
-  Activity                               Time
-  -------------------------- ----------------
-  Variables and user input         10 minutes
-  Arithmetic operations             5 minutes
-  Conditional statements           10 minutes
-  File handling                    10 minutes
-  Testing and debugging             5 minutes
-  **Total**                    **40 minutes**
+```
 
-## Learning Outcome
+#!/bin/bash
 
-By completing this task, students will practise Bash variables,
-input/output, arithmetic operations, conditional statements, and basic
-file handling in one small practical exercise.
+# 1. Variables
+course="Linux Basics"
 
-**Trainer note:** Encourage students to complete the task independently
-without copying the existing repository scripts.
+echo "Welcome to Student Information System"
+echo ""
+
+# 2. User Input
+read -p "Enter your name: " name
+
+echo ""
+
+read -p "Enter marks for Subject 1: " subject1
+read -p "Enter marks for Subject 2: " subject2
+
+# 3. Arithmetic
+total=$((subject1 + subject2))
+
+echo ""
+echo "Student Name: $name"
+echo "Course: $course"
+echo "Total Marks: $total"
+
+# 4. Conditional Statement
+if [ "$total" -ge 40 ]; then
+    echo ""
+    echo "Result: PASS"
+else
+    echo ""
+    echo "Result: FAIL"
+fi
+
+# 5. File Handling
+if [ -f "student.txt" ]; then
+    echo ""
+    echo "Student record found"
+else
+    echo ""
+    echo "Student record not found"
+fi
+
+```
